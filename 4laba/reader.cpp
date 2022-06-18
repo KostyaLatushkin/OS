@@ -9,8 +9,6 @@ wchar_t const* mes[4]{
 int main() {
 	HANDLE hSemaphore = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, L"Semaphore");
 	WaitForSingleObject(hSemaphore, INFINITE);
-	Sleep(50);
-	cout << "hi";
 	HANDLE mesEv[4];
 	for (int i = 0;i < 4;++i)
 		mesEv[i] = OpenEvent(EVENT_ALL_ACCESS, FALSE, mes[i]);

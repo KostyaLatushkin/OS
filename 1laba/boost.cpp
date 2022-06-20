@@ -1,11 +1,11 @@
 #include <iostream>
 #include <boost/thread.hpp>
-void thread(std::vector<short> const& v, uint32_t const& len) {
+void thread(std::vector<short> const& v) {
 	int _count = 0;
-	for (int i = 0;i < len;++i) {
-		if (v[i] % 9 == 0 && v[i] < 0) {
+	for (auto val : v) {
+		if (val % 9 == 0 && val < 0) {
 			++_count;
-			std::cout << v[i] << '\n';
+			std::cout << val << '\n';
 		}
 		boost::this_thread::sleep_for(boost::chrono::microseconds(30));
 	}
@@ -23,6 +23,6 @@ int main() {
 		std::cin >> v[i];
 
 	std::cout << "Worker:\n";
-	boost::thread thr(thread, boost::cref(v), boost::cref(n));
+	boost::thread thr(thread, boost::cref(v));
 	thr.join();
 }

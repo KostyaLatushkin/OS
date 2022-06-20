@@ -10,7 +10,7 @@ void thread(std::vector<short> const& v) {
 			++_count;
 			std::cout << val << '\n';
 		}
-		std::this_thread::sleep_for(boost::chrono::microseconds(30));
+		std::this_thread::sleep_for(std::chrono::microseconds(30));
 	}
 	if (!_count)
 		std::cout << "Элементы не найдены!\n";

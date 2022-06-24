@@ -2,7 +2,10 @@
 #include <Windows.h>
 #include <string>
 #include <sstream>
-using namespace std;
+
+using std::cin;
+using std::cout;
+using std::string;
 
 
 DWORD readCount = 0;
@@ -74,6 +77,6 @@ int main() {
 		CloseHandle(hreader[i]);
 	for (int i = 0;i < nwriter;++i)
 		CloseHandle(hwriter[i]);
-  CloseHandle(access);
+  	CloseHandle(access);
 	CloseHandle(readSum);
 }

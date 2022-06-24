@@ -1,6 +1,10 @@
 #include <windows.h>
 #include <iostream>
-using namespace std;
+
+using std::cin;
+using std::cout;
+using std::string;
+using std::wstring;
 
 void setSTP(STARTUPINFO* stp) {
 	ZeroMemory(stp, sizeof(STARTUPINFO));
